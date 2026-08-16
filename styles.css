@@ -368,6 +368,16 @@ header .wrap {
   font-style: italic;
 }
 
+.card-cta-disabled {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--border);
+  padding: 10px 22px;
+  border-radius: var(--radius);
+  cursor: default;
+}
+
 /* ---- Why ---- */
 .why {
   background: var(--why-bg);
