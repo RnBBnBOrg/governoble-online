@@ -378,6 +378,76 @@ header .wrap {
   cursor: default;
 }
 
+/* ---- Multi-Buy ---- */
+.multi-buy {
+  margin-top: 56px;
+  padding: 36px 32px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.multi-buy h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.multi-buy > p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+.multi-buy-tiers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .multi-buy-tiers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.multi-buy-tier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--ground);
+}
+
+.tier-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.tier-discount {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--coral);
+  letter-spacing: -0.02em;
+}
+
+.multi-buy-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 20px;
+  font-style: italic;
+}
+
 /* ---- Why ---- */
 .why {
   background: var(--why-bg);
