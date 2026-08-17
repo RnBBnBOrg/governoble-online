@@ -404,7 +404,7 @@ header .wrap {
 
 .multi-buy-tiers {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   max-width: 560px;
   margin: 0 auto;
