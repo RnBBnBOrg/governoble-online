@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You — Governoble</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+.thank-you { padding: 80px 0 120px; text-align: center; }
+.thank-you h1 { margin-bottom: 12px; }
+.thank-you .subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 48px; }
+.download-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 40px 32px;
+  max-width: 520px;
+  margin: 0 auto 32px;
+  text-align: left;
+}
+.download-card h2 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; margin-bottom: 8px; }
+.download-card p { color: var(--text-muted); font-size: 0.93rem; margin-bottom: 24px; }
+.download-btn {
+  display: inline-block;
+  background: var(--coral);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.download-btn:hover { background: var(--coral-hover); color: #fff; }
+.next-steps {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 24px 0;
+}
+.next-steps h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 400; margin-bottom: 12px; }
+.next-steps ol { padding-left: 20px; font-size: 0.93rem; }
+.next-steps li { margin-bottom: 8px; line-height: 1.6; }
+.support-note { color: var(--text-muted); font-size: 0.85rem; margin-top: 48px; }
+.support-note a { color: var(--steel); }
+.no-product { max-width: 520px; margin: 0 auto; }
+.no-product p { font-size: 0.95rem; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <a href="/" class="logo"><b>Governoble</b><span class="tld">.online</span></a>
+    </div>
+  </header>
+
+  <section class="thank-you">
+    <div class="wrap" id="content">
+      <noscript>
+        <h1>Thank you for your purchase!</h1>
+        <p>Please enable JavaScript to see your download link, or contact <a href="mailto:support@governoble.online">support@governoble.online</a> for help.</p>
+      </noscript>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner">
+        <span class="footer-brand">Governoble<span class="tld">.online</span></span>
+        <span class="footer-copy">&copy; 2026 Governoble. All rights reserved. &middot; <a href="terms.html" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Terms and Conditions</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    var products = {
+      'SOP Builder Kit':              { file: 'downloads/SOP-Builder-Kit.zip',              start: 'START-HERE.html' },
+      'Client Proposal Kit':          { file: 'downloads/Client-Proposal-Kit.zip',          start: 'START-HERE.html' },
+      'Hiring Toolkit':               { file: 'downloads/Hiring-Toolkit.zip',               start: 'START-HERE.html' },
+      'Property Operations Toolkit':  { file: 'downloads/Property-Operations-Toolkit.zip',  start: 'START-HERE.html' },
+      'Guest Communication Kit':      { file: 'downloads/Guest-Communication-Kit.zip',      start: 'START-HERE.html' }
+    };
+
+    var params = new URLSearchParams(window.location.search);
+    var name = params.get('purchased');
+    var container = document.getElementById('content');
+
+    if (name && products[name]) {
+      var p = products[name];
+      container.innerHTML =
+        '<h1>Thank you for your purchase!</h1>' +
+        '<p class="subtitle">Your toolkit is ready to download.</p>' +
+        '<div class="download-card">' +
+          '<h2>' + name + '</h2>' +
+          '<p>Click below to download your toolkit. Save the ZIP file and extract it to get started.</p>' +
+          '<a href="' + p.file + '" class="download-btn" download>Download ' + name + '</a>' +
+        '</div>' +
+        '<div class="next-steps">' +
+          '<h3>Getting started</h3>' +
+          '<ol>' +
+            '<li>Download and unzip the file</li>' +
+            '<li>Open <strong>' + p.start + '</strong> in your browser</li>' +
+            '<li>Follow the quick-start guide to set up your first template</li>' +
+          '</ol>' +
+        '</div>' +
+        '<p class="support-note">Questions? Reach us at <a href="mailto:support@governoble.online">support@governoble.online</a></p>';
+    } else {
+      container.innerHTML =
+        '<h1>Thank you!</h1>' +
+        '<div class="no-product">' +
+          '<p>If you just completed a purchase, your download link should have appeared here. Please check your email for a receipt, or contact us for help.</p>' +
+          '<p><a href="mailto:support@governoble.online">support@governoble.online</a></p>' +
+        '</div>';
+    }
+  })();
+  </script>
+
+</body>
+</html>
